@@ -3,7 +3,8 @@ import streamlit as st
 import pandas as pd
 from pathlib import Path
 
-import plotly.express as px
+import matplotlib.pyplot as plt
+import plotly_express as px
 
 from kitconc.kit_corpus import Corpus
 
@@ -70,8 +71,8 @@ A ferramenta wordlist faz uma listagem ordenada por frequência de todas as form
 
         figbar = px.bar(wordlist.df.head(30), x='WORD',y='FREQUENCY', title="Frequência das palavras")
         figline = px.line(wordlist.df.head(30), x='WORD',y='FREQUENCY', title="Frequência das palavras")
-        
-        st.plotly_chart(figbar, use_container_width=True)
+
+        st.plotly_chart(figbar,use_container_width=True)
         st.plotly_chart(figline, use_container_width=True)
 
     if btn_wordlist == True:
